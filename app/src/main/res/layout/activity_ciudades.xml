@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/texto_boton_fcp"
-        android:textColor="@color/color_ciudad" />
+        android:textColor="@color/color_grados" />
 
     <Button
         android:id="@+id/bChetu"
@@ -32,5 +32,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/texto_boton_chetu"
-        android:textColor="@color/color_ciudad" />
+        android:textColor="@color/color_grados" />
 </LinearLayout>

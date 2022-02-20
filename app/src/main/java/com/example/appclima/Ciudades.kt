@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.Toast
 
 class Ciudades : AppCompatActivity() {
+
+    val TAG= "com.vidamrr.appclima.ciudades.CIUDAD"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ciudades)
@@ -17,11 +20,14 @@ class Ciudades : AppCompatActivity() {
 
         bFcp.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra(TAG, "Felipe Carrillo Puerto")
             startActivity(intent)
         })
 
         bChetu.setOnClickListener(View.OnClickListener {
-            Toast.makeText(this, "Chetumal", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra(TAG, "Chetumal")
+            startActivity(intent)
         })
     }
 }
