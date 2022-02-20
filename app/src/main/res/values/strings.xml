@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">AppClima</string>
+    <string name="app_name">Clima</string>
     <string name="texto_grados">29°</string>
     <string name="texto_ciudad">Felipe Carrillo Puerto</string>
     <string name="texto_estatus">Parcialmente nublado</string>
+
+    <string name="texto_bienvenida">
+        Bienvenido a mi app del clima, para poder ver el clima de una ciudad selecciona la opcion de abajo.
+    </string>
+
+    <string name="texto_boton_fcp">Clima de Felipe Carrillo Puerto</string>
+    <string name="texto_boton_chetu">Clima de Chetumal</string>
 </resources>
