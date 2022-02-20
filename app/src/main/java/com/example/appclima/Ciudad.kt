@@ -10,6 +10,7 @@ class Ciudad (nombre:String, grados:Int, estatus:String) {
         this.nombre = nombre
         this.grados = grados
         this.estatus = estatus
+
     }
 
 }

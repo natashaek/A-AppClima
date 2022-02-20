@@ -8,6 +8,8 @@
         Bienvenido a mi app del clima, para poder ver el clima de una ciudad selecciona la opcion de abajo.
     </string>
 
-    <string name="texto_boton_fcp">Clima de Felipe Carrillo Puerto</string>
-    <string name="texto_boton_chetu">Clima de Chetumal</string>
+    <string name="texto_boton_fcp">Felipe Carrillo Puerto</string>
+    <string name="texto_boton_chetu">Chetumal</string>
+    <string name="texto_boton_tulum">Tulum</string>
+    <string name="texto_boton_cancun">Cancún</string>
 </resources>

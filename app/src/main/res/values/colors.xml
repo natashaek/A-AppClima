@@ -9,8 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="fiord">#44426E</color>
     <color name="fondo">#292643</color>
-    <color name="color_grados">#e99e75</color>
+    <color name="color_grados">#E99E75</color>
     <color name="color_ciudad">#bbaab8</color>
     <color name="color_estatus">#776483</color>
+    <color name="boton">#6D9773</color>
+
 
 </resources>

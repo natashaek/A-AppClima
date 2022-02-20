@@ -22,22 +22,48 @@ class MainActivity : AppCompatActivity() {
         val ciudad = intent.getStringExtra("com.vidamrr.appclima.ciudades.CIUDAD")
 
         Toast.makeText(this, ciudad, Toast.LENGTH_SHORT).show()
-        val ciudadfcp = Ciudad ("Felipe Carrillo Puerto", 30, "Parcialmente Nublado")
-        val ciudadchetu = Ciudad ("Othon P. Blanco", 29, "Parcialmente Nublado")
+        val ciudadfcp = Ciudad("Felipe Carrillo Puerto", 30, "Parcialmente Nublado")
+        val ciudadchetu = Ciudad("Chetumal", 29, "Nublado")
+        val ciudadTul = Ciudad("Tulum", 28, "Mayormente soleado")
+        val ciudadCan = Ciudad("Cancún", 27, "Soleado")
 
-        if(ciudad =="ciudad-fcp") {
-            // Mostrar informacion ciudadfcp
-            tvCiudad?.text = ciudadfcp.nombre
-            tvGrados?.text = ciudadfcp.grados.toString() + "°"
-            tvEstatus?.text= ciudadfcp.estatus
+        when (ciudad) {
+           "ciudad-fcp"  -> {
+               //Mostrar informacion ciudadfcp
+                tvCiudad?.text = ciudadfcp.nombre
+                tvGrados?.text = ciudadfcp.grados.toString()+ "°"
+                tvEstatus?.text = ciudadfcp.estatus
 
-        } else if (ciudad == "ciudad-chetu") {
-            // Mostrar informacion ciudadchetu
-            tvCiudad?.text = ciudadchetu.nombre
-            tvGrados?.text = ciudadchetu.grados.toString()+"°"
-            tvEstatus?.text = ciudadchetu.estatus
-        } else {
+
+            }
+            "ciudad-chetu"  -> {
+                // Mostrar informacion ciudadchetu
+                tvCiudad?.text = ciudadchetu.nombre
+                tvGrados?.text = ciudadchetu.grados.toString() + "°"
+                tvEstatus?.text = ciudadchetu.estatus
+
+
+            }
+            "ciudad-tul"  -> {
+                // Mostrar informacion ciudadtul
+                tvCiudad?.text = ciudadTul.nombre
+                tvGrados?.text = ciudadTul.grados.toString() + "°"
+                tvEstatus?.text = ciudadTul.estatus
+
+            }
+            "ciudad-can"  -> {
+                //Mostrar informacion ciudadcan
+                tvCiudad?.text = ciudadCan.nombre
+                tvGrados?.text = ciudadCan.grados.toString()+"°"
+                tvEstatus?.text = ciudadCan.estatus
+
+
+            } else -> {
             Toast.makeText(this, "No se encuentra la informacion.", Toast.LENGTH_SHORT).show()
+            }
+
+
         }
+
     }
 }

@@ -4,33 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fiord"
+    android:background="@color/fondo"
     android:orientation="vertical"
     tools:context=".Ciudades">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="377dp"
-        android:layout_height="98dp"
+        android:layout_width="wrap_content"
+        android:layout_height="223dp"
         android:layout_margin="16dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/texto_bienvenida"
         android:textAlignment="center"
-        android:textColor="@color/color_ciudad"
-        android:textSize="24sp" />
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="34sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        app:srcCompat="@android:drawable/ic_menu_mapmode" />
 
     <Button
         android:id="@+id/bFcp"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="@string/texto_boton_fcp"
-        android:textColor="@color/color_grados" />
+        android:textColor="@color/color_grados"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/bChetu"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="@string/texto_boton_chetu"
-        android:textColor="@color/color_grados" />
+        android:textColor="@color/color_grados"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bTulum"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/texto_boton_tulum"
+        android:textColor="@color/color_grados"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bCancun"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/texto_boton_cancun"
+        android:textColor="@color/color_grados"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 </LinearLayout>
