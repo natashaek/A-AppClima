@@ -14,8 +14,9 @@
         android:layout_height="98dp"
         android:layout_margin="16dp"
         android:text="@string/texto_bienvenida"
+        android:textAlignment="center"
         android:textColor="@color/color_ciudad"
-        android:textSize="11sp" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/bFcp"
