@@ -9,6 +9,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.google.gson.Gson
 import java.io.IOException
 import kotlin.jvm.Throws
 
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         if(Network.hayRed(this)) {
             //ejecutar solicitud http
-            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id={3527639}&appid={6572f556ba651d698f8d6fdc671c3a60}")
+            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id=3527639&appid=6572f556ba651d698f8d6fdc671c3a60")
             //solicitudHTTPVolley("api.openweathermap.org/data/2.5/weather?id={3527639}&appid={6572f556ba651d698f8d6fdc671c3a60}")
             //6572f556ba651d698f8d6fdc671c3a60
             // fcp 3527639
@@ -39,14 +40,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         Toast.makeText(this, ciudad, Toast.LENGTH_SHORT).show()
-        val ciudadfcp = Ciudad("Felipe Carrillo Puerto", 30, "Parcialmente Nublado")
+       /* val ciudadfcp = Ciudad("Felipe Carrillo Puerto", 30, "Parcialmente Nublado")
         val ciudadchetu = Ciudad("Chetumal", 29, "Nublado")
         val ciudadTul = Ciudad("Tulum", 28, "Mayormente soleado")
         val ciudadCan = Ciudad("Cancún", 27, "Soleado")
 
         when (ciudad) {
-           "ciudad-fcp"  -> {
-               //Mostrar informacion ciudadfcp
+            "ciudad-fcp"  -> {
+                //Mostrar informacion ciudadfcp
                 tvCiudad?.text = ciudadfcp.nombre
                 tvGrados?.text = ciudadfcp.grados.toString()+ "°"
                 tvEstatus?.text = ciudadfcp.estatus
@@ -77,11 +78,9 @@ class MainActivity : AppCompatActivity() {
 
             } else -> {
             Toast.makeText(this, "No se encuentra la informacion.", Toast.LENGTH_SHORT).show()
-            }
+        }*/
 
         }
-
-    }
     //Metodo para Volley
     private fun solicitudHTTPVolley(url:String) {
         val queue = Volley.newRequestQueue(this)
@@ -92,10 +91,19 @@ class MainActivity : AppCompatActivity() {
 
             try {
                 Log.d("solicitudHTTPVolley", response)
+
+                val gson = Gson()
+                val ciudad = gson.fromJson(response, Ciudad::class.java)
+                tvCiudad?.text = ciudad.name
+                tvGrados?.text = ciudad.main?.temp.toString() + "°"
+                tvEstatus?.text = ciudad.weather?.get(0)?.description
+
             } catch (e: Exception){
 
             }
         }, Response.ErrorListener {  })
 
         queue.add(solicitud)
-    }}
+    }
+    }
+
