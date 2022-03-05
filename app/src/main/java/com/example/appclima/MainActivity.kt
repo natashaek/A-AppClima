@@ -2,8 +2,15 @@ package com.example.appclima
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import java.io.IOException
+import kotlin.jvm.Throws
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +27,16 @@ class MainActivity : AppCompatActivity() {
         tvEstatus = findViewById(R.id.tvEstatus)
 
         val ciudad = intent.getStringExtra("com.vidamrr.appclima.ciudades.CIUDAD")
+
+        if(Network.hayRed(this)) {
+            //ejecutar solicitud http
+            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id={3527639}&appid={6572f556ba651d698f8d6fdc671c3a60}")
+            //solicitudHTTPVolley("api.openweathermap.org/data/2.5/weather?id={3527639}&appid={6572f556ba651d698f8d6fdc671c3a60}")
+            //6572f556ba651d698f8d6fdc671c3a60
+            // fcp 3527639
+        } else {
+            //mostrar mensaje de error
+        }
 
         Toast.makeText(this, ciudad, Toast.LENGTH_SHORT).show()
         val ciudadfcp = Ciudad("Felipe Carrillo Puerto", 30, "Parcialmente Nublado")
@@ -62,8 +79,23 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "No se encuentra la informacion.", Toast.LENGTH_SHORT).show()
             }
 
-
         }
 
     }
-}
+    //Metodo para Volley
+    private fun solicitudHTTPVolley(url:String) {
+        val queue = Volley.newRequestQueue(this)
+
+        val solicitud = StringRequest(Request.Method.GET, url, Response.Listener <String>{
+
+                response ->
+
+            try {
+                Log.d("solicitudHTTPVolley", response)
+            } catch (e: Exception){
+
+            }
+        }, Response.ErrorListener {  })
+
+        queue.add(solicitud)
+    }}
