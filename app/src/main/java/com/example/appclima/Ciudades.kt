@@ -22,25 +22,25 @@ class Ciudades : AppCompatActivity() {
 
         bFcp.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra(TAG, "ciudad-fcp")
+            intent.putExtra(TAG, "3527639")
             startActivity(intent)
         })
 
         bChetu.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra(TAG, "ciudad-chetu")
+            intent.putExtra(TAG, "3531023")
             startActivity(intent)
         })
 
         bTul.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra(TAG, "ciudad-tul")
+            intent.putExtra(TAG, "3515040")
             startActivity(intent)
         })
 
         bCan.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra(TAG, "ciudad-can")
+            intent.putExtra(TAG, "3531673")
             startActivity(intent)
         })
     }

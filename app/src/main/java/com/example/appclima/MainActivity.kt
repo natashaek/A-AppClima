@@ -31,12 +31,14 @@ class MainActivity : AppCompatActivity() {
 
         if(Network.hayRed(this)) {
             //ejecutar solicitud http
-            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id=3527639&appid=6572f556ba651d698f8d6fdc671c3a60")
+            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id="+ciudad+"&appid=6572f556ba651d698f8d6fdc671c3a60&units=metric&lang=es")
             //solicitudHTTPVolley("api.openweathermap.org/data/2.5/weather?id={3527639}&appid={6572f556ba651d698f8d6fdc671c3a60}")
             //6572f556ba651d698f8d6fdc671c3a60
             // fcp 3527639
+            //api.openweathermap.org/data/2.5/weather?id=2172797&appid=6572f556ba651d698f8d6fdc671c3a60
         } else {
             //mostrar mensaje de error
+            Toast.makeText(this, "No hay red.", Toast.LENGTH_SHORT).show()
         }
 
         Toast.makeText(this, ciudad, Toast.LENGTH_SHORT).show()
